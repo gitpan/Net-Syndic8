@@ -4,8 +4,8 @@ use strict;
 use warnings;
 use Data::Dumper;
 use Net::Syndic8::FeedObj;
-use HTML::WebDAO::Base;
-our @ISA = qw(HTML::WebDAO::Base);
+use Net::Syndic8::Base;
+our @ISA = qw(Net::Syndic8::Base);
 our $VERSION = '0.01';
 attributes (qw/Gate Cache/);
 
@@ -51,7 +51,6 @@ if (%fetch) {
 	->array(@ids)
 	->value};
 	map {$fetch{$_}->Data($feeds_info{$_})} @ids;
-#	print Dumper(\%feeds_info);     
 	}
 }
 

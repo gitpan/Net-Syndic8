@@ -19,7 +19,7 @@ This module requires these other modules and libraries:
 
 	RPC::XML;
 	RPC::XML::Client;
-	HTML::WebDAO;
+	FreezeThaw;
 COPYRIGHT AND LICENCE
 
 Copyright (C) 2004 by Zahatski Aliaksandr

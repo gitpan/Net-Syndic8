@@ -6,9 +6,9 @@ require RPC::XML;
 require RPC::XML::Client;
 use Net::Syndic8::RPCXML;
 use Net::Syndic8::FeedsCollection;
-use HTML::WebDAO::Base;
-our @ISA = qw(HTML::WebDAO::Base);
-our $VERSION = '0.02';
+use Net::Syndic8::Base;
+our @ISA = qw(Net::Syndic8::Base);
+our $VERSION = '0.04';
 attributes (qw/Gate FeedsColl/);
 
 sub _init { my $self=shift;$self->Init(@_);return 1}
@@ -45,12 +45,22 @@ Net::Syndic8 - Object-oriented Perl interface to access and change information w
   use Net::Syndic8;
   my $obj= new Net::Syndic8::;
   my $res=$obj->FindFeeds('unix');
+ ...
   foreach my $feed (@$res) {
 	my $hash_ref=$feed->Data;
 	print join "\t"=> $feed->ID, map { $hash_ref->{$_} } qw/siteurl sitename dataurl/;
 	print "\n";
  }
-
+ ...
+  while (my @bulk=splice(@$res,0,10)) {     #splice by ten items
+    $obj->FeedsColl()->Load(@bulk);         #for bulk load (by one query to Syndic8)
+    foreach my $feed (@bulk) {              # it use syndic8.GetFeedInfo for array
+	my $hash_ref=$feed->Data;
+	print join "\t"=> $feed->ID, map { $hash_ref->{$_} } qw/siteurl sitename dataurl/;
+	print "\n";
+	}
+	}
+ ...
 
 =head1 DESCRIPTION
 

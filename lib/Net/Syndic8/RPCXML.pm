@@ -4,8 +4,8 @@ use strict;
 use warnings;
 require RPC::XML;
 require RPC::XML::Client;
-use HTML::WebDAO::Base;
-our @ISA = qw(HTML::WebDAO::Base);
+use Net::Syndic8::Base;
+our @ISA = qw(Net::Syndic8::Base);
 our $VERSION = '0.01';
 # Preloaded methods go here.
 attributes (qw/EndPoint Function Params/);
