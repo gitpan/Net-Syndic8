@@ -8,7 +8,7 @@ use Net::Syndic8::RPCXML;
 use Net::Syndic8::FeedsCollection;
 use HTML::WebDAO::Base;
 our @ISA = qw(HTML::WebDAO::Base);
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 attributes (qw/Gate FeedsColl/);
 
 sub _init { my $self=shift;$self->Init(@_);return 1}

@@ -62,7 +62,7 @@ __END__
 
 =head1 NAME
 
-Net::Syndic8::FeedsCollection - Class  with xml-rpc call and maintain collection of results.
+Net::Syndic8::FeedsCollection - Class  with xml-rpc calls and for maintain collection of results.
 
 =head1 SYNOPSIS
 
@@ -75,8 +75,8 @@ Net::Syndic8::FeedsCollection - Class  with xml-rpc call and maintain collection
 
 =head1 DESCRIPTION
 
-Net::Syndic8::FeedsCollection - Class  with xml-rpc call and maintain collection of results.
-It ised inetrnally by  Net::Syndic8;
+Net::Syndic8::FeedsCollection - Class  with xml-rpc calls and for maintain collection of results.
+It ised internally by  Net::Syndic8;
 
 =head1 SEE ALSO
 
